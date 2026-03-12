@@ -1,0 +1,131 @@
+/* About Section Styles */
+.about-section {
+    padding: 100px 5%;
+    background-color: #121212;
+    overflow: hidden; /* Scroll animation အတွက် */
+}
+
+/* ၁။ Main Hero ပုံ */
+.about-hero {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* ၇၀ ကနေ ၄၅ ထိ လျှော့လိုက်တယ်၊ ဒါဆို အရမ်းမကြီးတော့ဘူး */
+    margin-bottom: 50px;
+    border-radius: 0; /* Hero image က ဘေးအနားသတ်တွေ မလိုရင် 0 ထားပါ */
+    overflow: hidden;
+}
+
+.main-about-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ပုံမပြဲအောင် ညှိမယ် */
+}
+
+.about-hero .hero-text {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    color: #ffffff;
+    background-color: rgba(0,0,0,0.6); /* စာဖတ်လို့ရအောင် */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* ၂။ အလှည့်ကျ Layout */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 80px; /* Row တစ်ခုချင်းစီကြား အကွာအဝေး */
+}
+
+.about-row {
+    display: flex;
+    align-items: center;
+    gap: 5%; /* စာနဲ့ပုံကြား အကွာအဝေး */
+}
+
+/* အဓိကအချက်: ဒုတိယ Row တစ်ခုချင်းစီကို ပြောင်းပြန်လုပ်ခြင်း */
+.about-row:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* စာသားအပိုင်း */
+.about-text {
+    flex: 1; /* အကျယ်အပြည့်ယူမယ် */
+}
+
+.about-text h3 {
+    color: #c8a97e;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #ffffff;
+    line-height: 1.8;
+}
+
+/* ပုံအပိုင်း */
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* ပိုပေါ်လွင်အောင် */
+}
+
+/* Animation အတွက် အစ (Starting State) */
+.fade-in {
+    opacity: 0; /* ပျောက်နေမယ် */
+    transform: translateY(30px); /* နည်းနည်းအောက်ရောက်နေမယ် */
+    transition: all 0.8s ease-out; /* နူးညံ့တဲ့ animation */
+}
+
+/* Animation ရဲ့ အဆုံး (Ending State) - JS က ဒီ class ကို ထည့်ပေးလိမ့်မယ် */
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Screen အကျယ် 768px ထက် ငယ်သွားရင် (ဖုန်းနဲ့ Tablet) */
+@media (max-width: 768px) {
+    
+    /* Hero Image အမြင့်ကို ဖုန်းမှာ နည်းနည်းထပ်လျှော့မယ် */
+    .about-hero {
+        height: 35vh;
+    }
+
+    .about-hero .hero-text {
+        left: 20px;
+        bottom: 20px;
+        padding: 15px;
+    }
+
+    .about-hero .hero-text h2 {
+        font-size: 1.5rem;
+    }
+
+    /* အလှည့်ကျ Layout ကို ဖုန်းမှာ အပေါ်အောက် ပြန်ပြောင်းမယ် */
+    .about-row, 
+    .about-row:nth-child(even) {
+        flex-direction: column !important; /* အမြဲတမ်း အပေါ်အောက် ဖြစ်စေရမယ် */
+        gap: 20px;
+    }
+
+    /* ပုံနဲ့ စာကို အကျယ်အပြည့် ပေးမယ် */
+    .about-text, .about-image {
+        width: 100%;
+        text-align: center; /* စာတွေကို အလယ်ပို့မယ် (ဖုန်းမှာ ကြည့်ကောင်းအောင်) */
+    }
+
+    .about-image img {
+        height: 300px; /* ဖုန်းမှာ ပုံအမြင့်ကို နည်းနည်းလျှော့မယ် */
+    }
+
+    .about-text h3 {
+        font-size: 1.5rem;
+    }
+}

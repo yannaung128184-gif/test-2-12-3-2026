@@ -1,0 +1,67 @@
+/* Menu Hero */
+.menu-hero {
+    height: 50vh;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/banner-entradas-blog-2.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.menu-hero h1 {
+    font-size: 3.5rem;
+    color: #c8a97e;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+/* Menu Layout */
+.menu-page {
+    padding: 100px 5%;
+    background-color: #121212;
+    text-align: center;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+/* Card တစ်ခုချင်းစီရဲ့ Style */
+.card {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: #c8a97e;
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* ပုံတွေ အချိုးအစားမပျက်အောင် ညှိပေးတယ် */
+    border-radius: 8px;
+}
+
+.card h3 {
+    color: #c8a97e;
+    margin-top: 15px;
+}
+
+.card p {
+    color: #ffffff;
+    font-weight: bold;
+}
+@media (max-width: 768px) {
+    .menu-hero h1 {
+        font-size: 2rem; /* ဖုန်းမှာဆိုရင် စာလုံးကို နည်းနည်းသေးပေးမယ် */
+    }
+}
